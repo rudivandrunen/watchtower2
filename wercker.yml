@@ -22,7 +22,7 @@ build:
         code: |
           cd $WERCKER_SOURCE_DIR
           go build $(glide novendor)
-          ls -lR $WERCKER_SOURCE_DIR
+          find / -name "watchtower" -print
           ls -lR /go/bin
           
 
