@@ -21,8 +21,9 @@ build:
         name: go build
         code: |
           cd $WERCKER_SOURCE_DIR
-          go build $(glide novendor)
-          find / -name "watchtower" -print
+#           go build $(glide novendor)
+          go build ./...
+          find / -name "watchtower*" -print
           ls -lR /go/bin
           
 
