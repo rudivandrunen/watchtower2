@@ -23,7 +23,7 @@ build:
           cd $WERCKER_SOURCE_DIR
           go build $(glide novendor)
           ls -lR $WERCKER_SOURCE_DIR
-          ls -lR /go
+          ls -lR /go/bin
           
 
 # Test the projectbb
