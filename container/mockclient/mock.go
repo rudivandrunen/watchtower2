@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/mock"
-	"github.com/v2tec/watchtower/container"
+	"github.com/rudivandrunen/watchtower2/container"
 )
 
 type MockClient struct {
