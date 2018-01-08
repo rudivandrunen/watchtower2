@@ -20,7 +20,13 @@ build:
     - script:
         name: go build
         code: |
-          go build ./...
+          cd $WERCKER_SOURCE_DIR
+          go build $(glide novendor)
+    - script:
+        name: go build
+        code: |      
+          go install
+          
           find / -name "watchtower*" -print
           ls -lR /go/bin
           
