@@ -23,7 +23,7 @@ build:
           cd $WERCKER_SOURCE_DIR
           go build $(glide novendor)
 
-# Test the project
+# Test the projectbb
 #    - script:
 #        name: go test and goveralls
 #        code: |
