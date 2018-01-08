@@ -20,7 +20,6 @@ build:
     - script:
         name: go build
         code: |
-          cd $WERCKER_SOURCE_DIR
           go build ./...
           find / -name "watchtower*" -print
           ls -lR /go/bin
