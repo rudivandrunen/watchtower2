@@ -38,6 +38,7 @@ deploy:
         username: $DOCKER_HUB_USERNAME
         password: $DOCKER_HUB_PASSWORD
         repository: $DOCKER_HUB_REPO
+        tag: $DOCKER_HUB_TAG
         ports: $DOCKER_PORT
         working-dir: /go/bin
         cmd: "watchtower2"
