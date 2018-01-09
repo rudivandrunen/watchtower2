@@ -41,6 +41,6 @@ deploy:
         tag: $DOCKER_HUB_TAG
         ports: $DOCKER_PORT
         working-dir: /go/bin
-        cmd: "watchtower2"
+        cmd: "/go/bin/watchtower2"
         registry:  https://hub.docker.com
 
