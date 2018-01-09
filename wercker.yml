@@ -39,7 +39,7 @@ build:
 deploy:
   box:
 #    id: golang:1.7.4
-    id: scratch 
+    id: alpine 
   steps:
     - script:
         name: copy
