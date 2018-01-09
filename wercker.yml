@@ -28,6 +28,7 @@ build:
           go install
     - script:
         name: copy binary file
+        code: |
           cp /go/bin/watchtower2 $WERCKER_OUTPUT_DIR
           cp /go/bin/watchtower2 $WERCKER_SOURCE_DIR
           cp /go/bin/watchtower2 /
