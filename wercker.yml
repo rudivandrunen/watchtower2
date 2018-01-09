@@ -38,8 +38,8 @@ build:
           
 deploy:
   box:
-#    id: golang:1.7.4
-    id: golang:alpine 
+    id: golang:1.7.4
+
   steps:
     - script:
         name: copy
