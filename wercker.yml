@@ -32,7 +32,8 @@ build:
           
 deploy:
   box:
-    id: golang:1.7.4
+#    id: golang:1.7.4
+    id: centurylink/ca-certs
   steps:
     - internal/docker-push:
         username: $DOCKER_HUB_USERNAME
