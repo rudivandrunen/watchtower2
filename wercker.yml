@@ -38,8 +38,8 @@ build:
           
 deploy:
   box:
-    id: golang:1.7.4
-  
+#    id: golang:1.7.4
+    id: scratch 
   steps:
     - script:
         name: copy
