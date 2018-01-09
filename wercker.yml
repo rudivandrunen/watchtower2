@@ -26,22 +26,32 @@ build:
         name: go install
         code: |      
           go install
-          
+    - script:
+        name: copy binary file
+          cp /go/bin/watchtower2 $WERCKER_OUTPUT_DIR
+          cp /go/bin/watchtower2 $WERCKER_SOURCE_DIR
+          cp /go/bin/watchtower2 /
           find / -name "watchtower*" -print
           ls -lR /go/bin
+          
           
 deploy:
   box:
     id: golang:1.7.4
-
+  
   steps:
+    - script:
+        name: copy
+        code: |
+          cp -Rp $WERCKER_SOURCE_DIR/watchtower2 /watchtower2
+          chmod 755 /watchtower2
     - internal/docker-push:
         username: $DOCKER_HUB_USERNAME
         password: $DOCKER_HUB_PASSWORD
         repository: $DOCKER_HUB_REPO
         tag: $DOCKER_HUB_TAG
         ports: $DOCKER_PORT
-        working-dir: /go/bin
-        cmd: "/go/bin/watchtower2"
+        working-dir: /
+        cmd: "/watchtower2"
         registry:  https://hub.docker.com
 
