@@ -60,9 +60,9 @@ deploy:
         
         
 deploy-scratch:
-box: google/golang
-    steps:
-     # Use the scratch step to build a container from scratch based on the files present
+  box: google/golang
+  steps:
+  # Use the scratch step to build a container from scratch based on the files present
     - internal/docker-scratch-push:
         username: $DOCKER_HUB_USERNAME
         password: $DOCKER_HUB_PASSWORD
