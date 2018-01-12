@@ -25,7 +25,7 @@ build:
     - script:
         name: go install
         code: |      
-          CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-extldflags "-static"' install
+          CGO_ENABLED=0 GOOS=linux go install
     - script:
         name: copy binary file
         code: |
