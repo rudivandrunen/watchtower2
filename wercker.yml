@@ -25,7 +25,7 @@ build:
     - script:
         name: go install
         code: |      
-          CGO_ENABLED=0 GOOS=linux go install
+          CGO_ENABLED=0 GOOS=linux go install -a -ldflags '-s' -installsuffix cgo
     - script:
         name: copy binary file
         code: |
@@ -56,4 +56,19 @@ deploy:
         working-dir: /
         cmd: "/watchtower2"
         registry:  https://hub.docker.com
+        
+        
+        
+deploy-scratch:
+box: google/golang
+    steps:
+     # Use the scratch step to build a container from scratch based on the files present
+    - internal/docker-scratch-push:
+        username: $DOCKER_HUB_USERNAME
+        password: $DOCKER_HUB_PASSWORD
+        cmd: "/watchtower2"
+        tag: $DOCKER_HUB_TAG
+        repository: $DOCKER_HUB_REPO
+        registry: https://hub.docker.com
+
 
