@@ -57,8 +57,6 @@ deploy:
         cmd: "/watchtower2"
         registry:  https://hub.docker.com
         
-        
-        
 deploy-scratch:
   box: google/golang
   steps:
